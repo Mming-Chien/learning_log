@@ -86,6 +86,9 @@ def edit_entry(request, entry_id):
 		if form.is_valid():
 			form.save()
 			return redirect("learning_logs:topic", topic_id=topic.id)
+	# Display a form for editing
+	context = {"entries": entries, "form":form, "topic": topic}
+	return render(request, "learning_logs/edit_entry.html", context)
 
 def check_topic_owner(topic,request):
 	"""Check whether the owner of the topic matches currently logged in user"""
@@ -93,5 +96,5 @@ def check_topic_owner(topic,request):
 		raise Http404
 
 	# Display a form for editing
-	context = {"entry": entry, "form":form, "topic": topic}
-	return render(request, "learning_logs/edit_entry.html", context)
+	#context = {"entries": entries, "form":form, "topic": topic}
+	#return render(request, "learning_logs/edit_entry.html", context)
