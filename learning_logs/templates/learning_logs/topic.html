@@ -7,7 +7,7 @@
 {% block content %}
 
 <p>
-	<a href="{% url 'learning_logs:new_entry' topic.id %}">Add new entry</a>
+	<a href="{% url 'learning_logs:new_entry' topic.id %}" class="btn btn-outline-primary btn-sm">Add new entry</a>
 </p>
 
 	{% for entry in entries %}

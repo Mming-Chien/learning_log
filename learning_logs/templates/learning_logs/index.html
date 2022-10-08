@@ -6,8 +6,12 @@
 		<h1 class="display-3">Track your learning.</h1>
 
 		<p class="lead">Make your own learning log, and keep the list of topics you're learning about. Whenever you learn something new about a topic, make an entry summaizing what you've learned.</p>
-		
+		{% if not user.is_authenticated %}
 		<a class="btn btn-primary btn-lg " href="{% url 'users:register' %}" role="button">Register &raquo</a>
+		{% endif %}
+
+		
+		
 	</div>
 	
 {% endblock page_header %}
